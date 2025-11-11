@@ -44,7 +44,3 @@ const terminal = new WebTerminalEmbed({
 });
 </script>
 ```
-
-## Licence
-
-MIT
