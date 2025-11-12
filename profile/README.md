@@ -1,6 +1,6 @@
 ## Purpose
 
-This project is a web-terminal that can be embedded in any website. It provides multiple Linux terminal which can be very useful when following online workshops / tutorials.
+This project is a web terminal that can be embedded in any website. It provides multiple Linux terminal which can be very useful when following online workshops / tutorials.
 
 ## Overall Architecture
 
@@ -19,12 +19,13 @@ It involves several services:
 - a web socket server which proxies the user input to the underlying nested VMs
 - an instance manager in charge of creating the VM instances
 - a NATS message broker as the communication layer
+- a Postgres database that stores the VMs status
 
 ## Installation
 
 The backend part can be installed:
-- using Docker Compose, for local testing
-- using Helm, in Kubernetes, for a production environment
+- using [Docker Compose](./compose.yml), for local testing
+- using Helm, in Kubernetes, for a production environment (more on that soon)
 
 ## GitHub application
 
@@ -32,7 +33,7 @@ Before using the application, you need to create a GitHub app to enable GitHub s
 
 ## Usage
 
-To use the web-terminal, you only need to add the following snippet in your web page, replacing the placeholders with the details of the GitHub application.
+To use w3term in your web application, you only need to add the following snippet in your web page, replacing the placeholders with the details of the GitHub application.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@web-terminal/terminal@latest/terminal.min.js"></script>
@@ -44,3 +45,7 @@ const terminal = new WebTerminalEmbed({
 });
 </script>
 ```
+
+## Status
+
+WIP: documentation and examples will be added soon 
