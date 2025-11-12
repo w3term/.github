@@ -1,0 +1,83 @@
+services:
+  www:
+   build:
+     context: ../www
+     dockerfile: Dockerfile 
+   ports:
+   - 80:80
+   restart: always
+   develop:
+     watch:
+       - action: rebuild
+         path: ../www/index.html
+       - action: rebuild
+         path: ../www/index.css
+       - action: rebuild
+         path: ../www/index.js
+  auth:
+    build: ../auth
+    ports:
+    - 3000:3000
+    environment:
+      ALLOWED_ORIGINS: "http://localhost"
+      JWT_SECRET: "my-super-secret-key"
+    restart: always
+    volumes:
+    - ./github-apps.yaml:/etc/config/github-apps.yaml
+  wss:
+    build:
+      context: ../wss
+      dockerfile: Dockerfile.dev
+    ports:
+    - 8081:8081
+    environment:
+      VM_USER: user
+      ALLOWED_ORIGINS: "http://localhost"
+      JWT_SECRET: "my-super-secret-key"
+    restart: always
+    volumes:
+    - ./ssh.key:/etc/keys/cka
+    - ../wss:/usr/src/app
+    - /usr/src/app/node_modules
+    develop:
+      watch:
+        - action: sync
+          path: ../wss
+          target: /usr/src/app
+          ignore:
+            - node_modules/
+            - .git/
+            - .gitignore
+            - README.md
+            - Dockerfile*
+        - action: rebuild
+          path: package.json
+  instances:
+    build:
+      context: ../instances
+      dockerfile: Dockerfile
+    environment:
+      EXOSCALE_API_KEY: ...
+      EXOSCALE_API_SECRET: ...
+      DATABASE_DSN: "postgres://postgres:postgres@postgres:5432/terminal?sslmode=disable"
+    restart: always
+    volumes:
+    - ./vms.yaml:/etc/config/vms.yaml
+    develop:
+      watch:
+        - action: rebuild
+          path: ../instances
+  nats:
+    image: nats:2.11.2-alpine
+    ports:
+    - 4222:4222
+    restart: always
+  postgres:
+    image: postgres:17.4-alpine3.21
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: terminal
+    ports:
+      - 5432:5432
+    restart: always
