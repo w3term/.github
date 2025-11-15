@@ -23,7 +23,9 @@ It involves several services:
 
 ## How to use it (for local testing)
 
-- Create a GitHub app to enable GitHub signin.
+1. Create a new folder and clone the repositories `instances`, `auth` and `wss` inside it.
+
+2. Create a GitHub app to enable GitHub signin.
 
 In GitHub, go to Settings -> developer settings -> OAuth Apps. Create an app with the parameters specified in the screenshot below.
 
@@ -31,13 +33,16 @@ In GitHub, go to Settings -> developer settings -> OAuth Apps. Create an app wit
 
 Once the app is created, get the client ID and client secret.
 
-- Set the client ID and client secret in the [github-apps.yaml file](github-apps.yaml)
+3. Set the client ID and client secret in the [github-apps.yaml file](github-apps.yaml)
 
-- Create Exoscale keys with compute role
+4. Create Exoscale keys with compute role
 
-- Run the backend part using this [Docker Compose specification](./compose.yml)
+5. Run the backend part using this [Docker Compose specification](./compose.yml)
 
-- Then, import the following script into your website, replacing the placeholders with the details of the GitHub application.
+> [!NOTE]
+> Make sure 
+
+6. Import the following script into your website, replacing the placeholders with the details of the GitHub application.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@w3term/terminal@latest/terminal.min.js"></script>
