@@ -23,7 +23,14 @@ It involves several services:
 
 ## How to use it (for local testing)
 
-1. Create a new folder and clone the repositories `instances`, `auth` and `wss` inside it.
+1. Run the following script to create a new folder, clone the repositories `instances`, `auth`, `wss` inside it, and get the necessary files.
+
+```bash
+mkdir w3term && cd w3term
+for repo in instances auth wss; do
+  git clone git@github.com:w3term/$repo
+done
+```
 
 2. Create a GitHub app to enable GitHub signin.
 
