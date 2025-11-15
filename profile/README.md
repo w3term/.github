@@ -21,15 +21,21 @@ It involves several services:
 - a NATS message broker as the communication layer
 - a Postgres database that stores the VMs status
 
-## How to use it
+## How to use it (for local testing)
 
-First, create a GitHub app to enable GitHub signin.
+- First, create a GitHub app to enable GitHub signin.
 
-Next, create Exoscale keys with compute role
+In GitHub, go to Settings -> developer settings -> OAuth Apps. Create an app with the following parameters
 
-Next, run the backend part either using [Docker Compose](./compose.yml), for local testing, or using Helm for a production environment in Kubernetes (more on that soon)
+![Github App](./images/github-app-local.png)
 
-Then, import the following script into your website, replacing the placeholders with the details of the GitHub application.
+Once the app is created, get the client ID and client secret (you will need them soon).
+
+- Next, create Exoscale keys with compute role
+
+- Next, run the backend part either using [Docker Compose](./compose.yml)
+
+- Then, import the following script into your website, replacing the placeholders with the details of the GitHub application.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@w3term/terminal@latest/terminal.min.js"></script>
