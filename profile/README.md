@@ -32,7 +32,7 @@ Next, run the backend part either using [Docker Compose](./compose.yml), for loc
 Then, import the following script into your website, replacing the placeholders with the details of the GitHub application.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@web-w3term/terminal@latest/terminal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@w3term/terminal@latest/terminal.min.js"></script>
 <script>
 const terminal = new WebTerminalEmbed({
     githubAppName: 'your-app-name',
@@ -44,4 +44,5 @@ const terminal = new WebTerminalEmbed({
 
 ## Status
 
-This is still a work in progress (even if this terminal is already fonctional). Documentation and examples will be added soon. 
+This is still a work in progress (even if this terminal is already functional). 
+Documentation and examples will be added soon.
