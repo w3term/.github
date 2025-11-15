@@ -23,17 +23,19 @@ It involves several services:
 
 ## How to use it (for local testing)
 
-- First, create a GitHub app to enable GitHub signin.
+- Create a GitHub app to enable GitHub signin.
 
-In GitHub, go to Settings -> developer settings -> OAuth Apps. Create an app with the following parameters
+In GitHub, go to Settings -> developer settings -> OAuth Apps. Create an app with the parameters specified in the screenshot below.
 
 ![Github App](./images/github-app-local.png)
 
-Once the app is created, get the client ID and client secret (you will need them soon).
+Once the app is created, get the client ID and client secret.
 
-- Next, create Exoscale keys with compute role
+- Set the client ID and client secret in the [github-apps.yaml file](github-apps.yaml)
 
-- Next, run the backend part either using [Docker Compose](./compose.yml)
+- Create Exoscale keys with compute role
+
+- Run the backend part using this [Docker Compose specification](./compose.yml)
 
 - Then, import the following script into your website, replacing the placeholders with the details of the GitHub application.
 
