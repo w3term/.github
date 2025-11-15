@@ -21,22 +21,18 @@ It involves several services:
 - a NATS message broker as the communication layer
 - a Postgres database that stores the VMs status
 
-## Installation
+## How to use it
 
-The backend part can be installed:
-- using [Docker Compose](./compose.yml), for local testing
-- using Helm, in Kubernetes, for a production environment (more on that soon)
+First, create a GitHub app to enable GitHub signin.
 
-## GitHub application
+Next, create Exoscale keys with compute role
 
-Before using the application, you need to create a GitHub app to enable GitHub signin.
+Next, run the backend part either using [Docker Compose](./compose.yml), for local testing, or using Helm for a production environment in Kubernetes (more on that soon)
 
-## Usage
-
-To use w3term in your web application, you only need to add the following snippet in your web page, replacing the placeholders with the details of the GitHub application.
+Then, import the following script into your website, replacing the placeholders with the details of the GitHub application.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@web-terminal/terminal@latest/terminal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@web-w3term/terminal@latest/terminal.min.js"></script>
 <script>
 const terminal = new WebTerminalEmbed({
     githubAppName: 'your-app-name',
@@ -48,4 +44,4 @@ const terminal = new WebTerminalEmbed({
 
 ## Status
 
-WIP: documentation and examples will be added soon 
+This is still a work in progress (even if this terminal is already fonctional). Documentation and examples will be added soon. 
