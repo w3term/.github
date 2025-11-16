@@ -14,53 +14,13 @@ In a nutshell:
 - this VM leverage the nested virtualization of Exoscale's VM ([read more about nested virtualization](https://www.exoscale.com/syslog/2025-04-01-multipass/))
 - a multi-tab terminal is returned to the user. Each terminal has a shell connected via SSH to one of the nested VM
 
-It involves several services:
-- web frontend: the one that can be embedded in a website
-- a web socket server which proxies the user input to the underlying nested VMs
-- an instance manager in charge of creating the VM instances
-- a NATS message broker as the communication layer
-- a Postgres database that stores the VMs status
+This project contains several GitHub repository:
+- `terminal`: the one that can be embedded in a website
+- `instances`: manager in charge of creating Exoscale instances (VM) on demand
+- `wss`: a web socket server which proxies the user input to the underlying VMs
+- `auth`: manage user authentication via GitHub
 
-## How to use it (for local testing)
-
-1. Run the following script to create a new folder, clone the repositories `instances`, `auth`, `wss` inside it, and get the necessary files.
-
-```bash
-mkdir w3term && cd w3term
-for repo in instances auth wss; do
-  git clone git@github.com:w3term/$repo
-done
-```
-
-2. Create a GitHub app to enable GitHub signin.
-
-In GitHub, go to Settings -> developer settings -> OAuth Apps. Create an app with the parameters specified in the screenshot below.
-
-![Github App](./images/github-app-local.png)
-
-Once the app is created, get the client ID and client secret.
-
-3. Set the client ID and client secret in the [github-apps.yaml file](github-apps.yaml)
-
-4. Create Exoscale keys with compute role
-
-5. Run the backend part using this [Docker Compose specification](./compose.yml)
-
-> [!NOTE]
-> Make sure 
-
-6. Import the following script into your website, replacing the placeholders with the details of the GitHub application.
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@w3term/terminal@latest/terminal.min.js"></script>
-<script>
-const terminal = new WebTerminalEmbed({
-    githubAppName: 'your-app-name',
-    githubClientId: 'your-client-id',
-    backendDomain: 'your-domain.com'
-});
-</script>
-```
+Under the hood, it also uses NATS message broker as the communication layer and a Postgres database that stores the VMs statuses.
 
 ## Status
 
