@@ -22,9 +22,16 @@ This project contains the following GitHub repositories:
 - `auth`: manages user authentication via GitHub. This service is developed in Go.
 - `stack`: documentation (still WIP) explaining how to run the application (either locally for testing, and in a Kubernetes cluster).
 
-Under the hood, it also uses NATS message broker as the communication layer and a Postgres database that stores the VMs statuses.
+This application uses:  
+
+- [NATS](https://nats.io) message broker as the communication layer
+- Postgres database to store the VMs statuses
+
+## Running it locally
+
+Follow [this documentation (WIP)](https://github.com/w3term/stack) to run the application on your local machine.
 
 ## Status
 
-This is still a work in progress (even if this terminal is already functional). 
-Documentation and examples will be added soon.
+This is still a work in progress (even if this terminal is already functional).  
+More documentation and examples will be added soon.
