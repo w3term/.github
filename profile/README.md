@@ -1,6 +1,6 @@
 ## Purpose
 
-This project is a web terminal that can be embedded in any website. It provides multiple Linux terminal which can be very useful when following online workshops / tutorials.
+This project is a web terminal, with several tabs, that can be embedded in any website. It was developed for online workshops or when following tutorials, but can be used in many other use cases.
 
 ## Overall Architecture
 
