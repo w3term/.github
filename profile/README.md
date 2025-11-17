@@ -1,6 +1,9 @@
 ## Purpose
 
-This project is a web terminal, with several tabs, that can be embedded in any website. It was developed for online workshops or when following tutorials, but can be used in many other use cases.
+This project is a web terminal, with several tabs, that can be embedded in any website. Each tab is connected to the same base VM, but can be connected to nested VM is the base VM has this capability.  
+It was developed for online workshops or when following tutorials, but can be used in many other use cases.  
+  
+This [article](https://www.exoscale.com/blog/multipass/) illustrates the usage of [Multipass](https://multipass.run) nested VM on [Exoscale instances](https://www.exoscale.com)
 
 ## Overall Architecture
 
