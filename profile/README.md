@@ -4,15 +4,15 @@ This project is a web terminal that can be embedded in any website. It provides 
 
 ## Overall Architecture
 
-The following diagram is an overview of the microservices architecture of this application.
+The following schema is an overview of the architecture.
 
 ![Architecture](./images/architecture.png)
 
-In a nutshell:
+The flow is as follows:
+
 - a user connects to the terminal using his GitHub account
 - in the backend a virtual machine is created on the [Exoscale](https://www.exoscale.com) cloud provider
-- this VM leverage the nested virtualization of Exoscale's VM ([read more about nested virtualization](https://www.exoscale.com/syslog/2025-04-01-multipass/))
-- a multi-tab terminal is returned to the user. Each terminal has a shell connected via SSH to one of the nested VM
+- a multi-tab terminal is returned to the user. Each terminal has a shell connected via SSH to this VM
 
 This project contains several GitHub repository:
 - `terminal`: the one that can be embedded in a website
