@@ -16,10 +16,10 @@ The flow is as follows:
 
 This project contains the following GitHub repositories:  
 
-- `terminal`: the UI part which, once packaged, can be embedded in a website
-- `instances`: manager in charge of creating Exoscale instances (VM) on demand
-- `wss`: a web socket server which proxies the user input to the underlying VMs
-- `auth`: manages user authentication via GitHub
+- `terminal`: the UI part which, once packaged, can be embedded in a website.
+- `instances`: manager in charge of creating Exoscale instances (VM) on demand. This service is developed in Go.
+- `wss`: a web socket server which proxies the user input to the underlying VMs. This service is developed in Node.js.
+- `auth`: manages user authentication via GitHub. This service is developed in Go.
 - `stack`: documentation (still WIP) explaining how to run the application (either locally for testing, and in a Kubernetes cluster).
 
 Under the hood, it also uses NATS message broker as the communication layer and a Postgres database that stores the VMs statuses.
