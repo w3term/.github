@@ -1,6 +1,6 @@
 ## Purpose
 
-This project is a web terminal, with several tabs, that can be embedded in any website. Each tab is connected to the same base VM, but can be connected to nested VM is the base VM has this capability.  
+This project is a mlulti-tabs web terminal, that can be embedded in any website. Each tab is connected to the same base VM, but can be connected to nested VM is the base VM has this capability.  
 It was developed for online workshops or when following tutorials, but can be used in many other use cases.  
   
 This [article](https://www.exoscale.com/blog/multipass/) illustrates the usage of [Multipass](https://multipass.run) nested VM on [Exoscale instances](https://www.exoscale.com)
@@ -34,7 +34,10 @@ This application uses:
 
 Follow [this documentation (WIP)](https://github.com/w3term/stack) to run the application on your local machine.
 
+## Running it on a Kubernetes cluster
+
+WIP
+
 ## Status
 
-This is still a work in progress (even if this terminal is already functional).  
-More documentation and examples will be added soon.
+This is still a work in progress (even if this terminal is already functional). More documentation and examples will be added soon.
