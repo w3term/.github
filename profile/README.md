@@ -30,14 +30,10 @@ This application uses:
 - [NATS](https://nats.io) message broker as the communication layer
 - Postgres database to store the VMs statuses
 
-## Running it locally
+## Running this projects
 
-Follow [this documentation (WIP)](https://github.com/w3term/stack) to run the application on your local machine.
-
-## Running it on a Kubernetes cluster
-
-WIP
+Follow [this documentation](https://github.com/w3term/stack) to run the application on your local machine or in a Kubernetes cluster.
 
 ## Status
 
-This is still a work in progress (even if this terminal is already functional). More documentation and examples will be added soon.
+This is a work in progress, more documentation and examples will be added soon.
